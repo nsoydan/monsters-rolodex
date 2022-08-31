@@ -1,7 +1,16 @@
-.App{
+body{
   background-color: antiquewhite;
 }
-.search-box{
-  margin:20px;
-  padding:10px;
+
+
+.app-title{
+ 
+  margin: 0 auto;
+  width: 500px;
+   
+  font-size: 75px;
+  color: aqua;
+  font-family: 'Bigelow Rules'; 
+  margin-top: 75px;
+  margin-bottom: 75px;
 }

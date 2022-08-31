@@ -1,27 +1,21 @@
-import { Component } from "react";
+
 import './card-list.style.css';
 import Card from '../card/card.component';
 
-class CardList extends Component {
-    
+const CardList = ({monsters})=>(     // directly destructring in here
+                                    // () implicit return using instead of return()
+   
+            <div className="card-list" >
+                { monsters.map(
+                    (monster)=>{
+                        return(
+                        <Card monster={monster} key={monster.id}/>
+                        )}                
+                )}
+            </div>
 
-    render(){
-        console.log("render in Cardlist component")
-        const {monsters}=this.props;
-        
-        return (
-        <div className="card-list">
-            { monsters.map(
-                (monster)=>{
-                    //const {id, name,email}= monster;  // Destructuring assignment in JS
-                    
-                    return(
-                    <Card monster={monster}/>
-                    )}                
-            )}
-        </div>
-        );
-    }
-}
+) 
+
+
 
 export default CardList;
