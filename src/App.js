@@ -10,16 +10,18 @@ const App= ()=>{
   const [searchString,setSearchString]=useState('');
   const [filteredMonsters,setFilteredMonsters]=useState(monsters);
 
-
+  console.log("APP.js çalıştı...");
 
   useEffect(()=>{
-    console.log("fetched ");
+    console.log("fetched useEffect çalıştı... ");
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(response=>response.json())
     .then((users)=>setMonsters(users))
   } ,[]);
 
   useEffect(()=>{
+    console.log("filteredMonster useffect");
+
     const newFilteredMonsters= monsters.filter(
       (monster)=>{
         return monster.name.toLocaleLowerCase().includes(searchString)
@@ -29,7 +31,7 @@ const App= ()=>{
   },[monsters,searchString]);
 
   function onSearchChange(e){
-    
+    console.log("onSearchChanged çalıştı");
     const searchString=e.target.value.toLocaleLowerCase()
     setSearchString(searchString);  
   }
