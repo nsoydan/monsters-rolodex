@@ -3,12 +3,17 @@ import "./search-box.style.css";
 
 type SearchBoxProps = {
   placeholder: string;
+  className: string;
   onChangeHandler: ChangeEventHandler<HTMLInputElement>;
 };
 
-const SearchBox = ({ placeholder, onChangeHandler }: SearchBoxProps) => (
+const SearchBox = ({
+  placeholder,
+  className,
+  onChangeHandler,
+}: SearchBoxProps) => (
   <input
-    className="search-box"
+    className={className}
     type="search"
     placeholder={placeholder}
     onChange={onChangeHandler}
